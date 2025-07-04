@@ -4,118 +4,123 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>I'm Your Huckleberry</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      display: flex;
-      background-color: #1c1c2b;
-      color: #f4f4f4;
+    :root {
+      --accent: #f4ce66;
+      --text-dark: #2c2c2c;
+      --text-soft: #444;
+      --card-bg: rgba(255, 255, 255, 0.85);
     }
 
-    /* Sidebar */
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: url('https://thumbs.dreamstime.com/b/sunny-morning-picnic-breakfast-wooden-table-forest-367117736.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: var(--text-dark);
+      display: flex;
+    }
+
     nav {
-      width: 250px;
-      background-color: #141421;
+      width: 220px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-right: 1px solid #ddd;
       height: 100vh;
       position: fixed;
-      top: 0;
-      left: 0;
-      padding: 20px;
+      padding: 30px 20px;
       box-sizing: border-box;
     }
 
     nav h2 {
-      font-size: 1.4em;
-      margin-bottom: 30px;
-      color: #ffffff;
+      font-size: 1.3em;
+      margin-bottom: 40px;
     }
 
     nav a {
       display: block;
       margin: 15px 0;
       text-decoration: none;
-      color: #a5a5c2;
-      transition: 0.2s;
+      color: var(--text-soft);
     }
 
     nav a:hover {
-      color: #ffffff;
+      color: var(--accent);
     }
 
     main {
-      margin-left: 250px;
+      margin-left: 220px;
       padding: 40px;
-      max-width: 1000px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .section, .hero {
+      background-color: var(--card-bg);
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
     .hero {
-      background: linear-gradient(135deg, #2a2a40, #3f3f65);
-      padding: 50px;
       text-align: center;
-      border-radius: 10px;
-      margin-bottom: 40px;
     }
 
     .hero h1 {
+      font-size: 2.5rem;
       margin-bottom: 10px;
     }
 
-    section {
-      margin-bottom: 50px;
+    .hero p {
+      font-size: 1.1rem;
     }
 
     .section-title {
+      font-size: 1.3rem;
       margin-bottom: 15px;
-      border-bottom: 2px solid #555;
+      border-bottom: 2px solid #ddd;
       padding-bottom: 5px;
-      font-size: 1.3em;
     }
 
-    .newsletter, .feedback, .ideas, .bank {
-      background-color: #2b2b42;
-      padding: 20px;
-      border-radius: 8px;
-    }
-
-    form input, form textarea, form button {
-      display: block;
+    form textarea, form button {
       width: 100%;
-      margin-top: 10px;
       padding: 10px;
-      border: none;
-      border-radius: 5px;
+      margin-top: 10px;
       font-family: inherit;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
     }
 
     form button {
-      background-color: #4c7df1;
-      color: white;
+      background-color: var(--accent);
+      color: black;
+      font-weight: bold;
+      border: none;
       cursor: pointer;
-      margin-top: 15px;
     }
 
     form button:hover {
-      background-color: #365ad9;
+      background-color: #f2c84a;
     }
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 15px;
     }
 
     .gallery img {
       width: 100%;
-      border-radius: 8px;
-      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
     }
 
     footer {
       text-align: center;
       margin-top: 40px;
-      color: #999;
+      color: #888;
       font-size: 0.9em;
     }
   </style>
@@ -123,57 +128,43 @@
 <body>
   <nav>
     <h2>Huckleberry League</h2>
-    <a href="#hero">Home</a>
-    <a href="#newsletters">Newsletters</a>
-    <a href="#bank">Bank Balance</a>
-    <a href="#ideas">Submit Ideas</a>
-    <a href="#anonymous">Anonymous Feedback</a>
+    <a href="#hero">🏠 Home</a>
+    <a href="#newsletters">📰 Newsletters</a>
+    <a href="bank.html">💰 Bank Balance</a>
+    <a href="#ideas">🗳️ Submit Ideas</a>
+    <a href="#anonymous">🙈 Anonymous Feedback</a>
   </nav>
 
   <main>
     <div class="hero" id="hero">
-      <h1>Welcome to the League</h1>
+      <h1>I'm Your Huckleberry</h1>
       <p>"This is about friendship first and football second."</p>
     </div>
 
-    <section id="newsletters">
-      <h2 class="section-title">📬 League Newsletters</h2>
-      <div class="newsletter">
-        <p>No newsletters yet. Stay tuned for weekly updates, match recaps, and power rankings!</p>
-      </div>
+    <section class="section" id="newsletters">
+      <h2 class="section-title">📰 League Newsletters</h2>
+      <p>No newsletters yet. Stay tuned for weekly updates, match recaps, and power rankings!</p>
     </section>
 
-    <section id="bank">
-      <h2 class="section-title">💰 League Bank Balance</h2>
-      <div class="bank">
-        <p>Current Balance: <strong>$0.00</strong></p>
-        <p>(We'll update this as payments come in and prizes go out!)</p>
-      </div>
-    </section>
-
-    <section id="ideas">
+    <section class="section" id="ideas">
       <h2 class="section-title">🗳️ Submit a New League Idea</h2>
-      <div class="ideas">
-        <form>
-          <label>What’s your idea?</label>
-          <textarea rows="4" placeholder="Describe your idea..."></textarea>
-          <button type="submit">Submit for Voting</button>
-        </form>
-      </div>
+      <form>
+        <label for="idea">What’s your idea?</label>
+        <textarea id="idea" rows="4" placeholder="Describe your idea..."></textarea>
+        <button type="submit">Submit for Voting</button>
+      </form>
     </section>
 
-    <section id="anonymous">
+    <section class="section" id="anonymous">
       <h2 class="section-title">🙈 Anonymous Feedback</h2>
-      <div class="feedback">
-        <form>
-          <label>Anything you don't like? Tell us anonymously:</label>
-          <textarea rows="4" placeholder="Your anonymous thoughts..."></textarea>
-          <button type="submit">Send Anonymously</button>
-        </form>
-      </div>
+      <form>
+        <label for="anon">Anything you don't like?</label>
+        <textarea id="anon" rows="4" placeholder="Your anonymous thoughts..."></textarea>
+        <button type="submit">Send Anonymously</button>
+      </form>
     </section>
 
-    <section id="photos">
+    <section class="section" id="photos">
       <h2 class="section-title">🏆 Photo Memories</h2>
       <div class="gallery">
         <img src="https://i.imgur.com/2NjxhWO.jpg" alt="Westbrook and team on field" />
@@ -182,7 +173,7 @@
     </section>
 
     <footer>
-      <p>&copy; 2025 I'm Your Huckleberry League. All about friendship and football.</p>
+      <p>&copy; 2025 I'm Your Huckleberry League. Powered by friendship and football.</p>
     </footer>
   </main>
 </body>
